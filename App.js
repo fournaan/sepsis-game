@@ -1,4 +1,5 @@
 import React from 'react';
+import { registerRootComponent } from 'expo';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
@@ -14,7 +15,7 @@ import GameOverScreen from './screens/GameOverScreen';
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+function App() {
   return (
     <GameProvider>
       <NavigationContainer>
@@ -39,3 +40,5 @@ export default function App() {
     </GameProvider>
   );
 }
+
+registerRootComponent(App);
